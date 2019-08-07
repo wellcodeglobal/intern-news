@@ -1,0 +1,78 @@
+<button type="button" class="btn btn-outline-secondary button-back"><a href="/home">Kembali</a></button>
+
+<div class="container">
+  <div class="main">
+  <div class="row">
+    <figure class="figure">
+      <img src="/image/gambar1.jpg" class="figure-img img-fluid rounded img-post" alt="Responsive image">
+      <figcaption class="figure-caption text-right">Sead Kolasinac dan Mesut Ozil. (dok. Arsenal FC)</figcaption>
+    </figure>
+
+    </div>
+    <div class="col-md-8">
+      <h1>Diteror Perampok Bersenjata, Mesut Ozil Dilindungi Sead Kolasinac</h1>
+      <div class="text-justify">
+      <p>London - Dua pemain Arsenal, Sead Kolasinac dan Mesut Ozil diteror perampok bersejata saat berada di London Utara. Hebatnya, Kolasinac dengan heroik melindungi Ozil, menghadapi para perampok dan membuat melarikan diri.</p>
+      <p>Dari video yang tersebar di media sosial, Sead Kolasinac keluar dari kendaraannya untuk menghadapi perampok. Ia menyuruh Mesut Ozil untuk tetap berada di dalam kendaraan.<p>
+      <p>Lalu, Kolasinac melakukan konfrontasi kepada dua perampok tersebut. Setelah berada dalam kondisi aman, Kolasinac dan Ozil masuk ke dalam restoran dan menguhungi pihak yang berwajib.</p>
+      <p>Arsenal telah mengonfirmasi kalau dua pemainnya tersebut tidak mengalami masalah apa pun.</p>
+      <p>“Kami telah menghubungi dua pemain kami, dan semuanya berada dalam kondisi selamat. Mereka telah melaporkan kejadian ke klub dan pihak yang berwajib,” ujar juru bicara Arsenal.</p>
+      <p>Saksi mata mengatakan kalau para perampok itu mengendarai sepeda motor dan mengincar pengemudi mobil.</p>
+      <p>“Para perampok yang menggunakan sepeda motor dan membawa senjata tajam menghentikan pengemudi mobil (Kolasinac dan Mesut Ozil). Namun, pengemudi memberikan perlawanan,” ujar saksi mata tersebut.</p>
+      <p>“Pengemudi mobil dan rekannya bisa selamat dan mengamankan diri di restoran Golden Green. Mereka bertemu dengan pihak yang berwajib di sana,” ujar saksi mata tersebut.</p>
+      <h3>Bukan Kejadian Pertama yang Menimpa Pemain Sepak Bola</h3>
+      <p>Kejadian yang dialami Sead Kolasinac dan Mesut Ozil bukanlah kejadian pertama yang dialami pesepak bola di London. Mantan pemain West Ham United, Andy Carroll juga pernah mengalami kejadian serupa.</p>
+      <p>Pada 2016, Andy Carroll dirampok ketika sedang berada di dalam mobil. Ia dihentikan oleh perampok yang mengendarai sepeda motor.</p>
+      <p>Perampok tersebut menggunakan senjata berapi, yang membuat Andy Carroll tak bisa melakukan perlawanan.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comment-btn">
+<button type="button" class="btn btn-outline-secondary mt-3 mx-5" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">KOMENTAR</button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Masukkan Komentar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <%= form_tag("/komentar", action:"post") do %>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Nama :</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="name">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Email :</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Komentar :</label>
+                <textarea class="form-control" name="komentar" id="message-text"></textarea>
+              </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% @comments.each do |comment| %>
+<ul class="list-unstyled-mx-5">
+  <li class="media">
+    <div class="media-body mx-4">
+      <h5 class="mt-4 mb-1"><%= comment.name %></h5> says:
+      <%= comment.komentar %>
+    </div>
+  </li>
+</ul>
+    <% end %>
