@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-HEAD
 
   #user
-
-7d6c4f45a9eca4395d4de606ddcfead94ef1d4df
   get '/', to: 'home#index'
   get '/article/:id', to: 'article#show'
   post '/comment', to: 'comment#create'
   get '/category/:id', to: 'category#show'
-HEAD
 
   #login
   #get '/login', to:'auth#index'
@@ -34,5 +30,4 @@ HEAD
   put '/admin/categories/:id', to:'admin/categories#update'
   delete '/admin/categories/:id', to:'admin/categories#destroy'
 
-7d6c4f45a9eca4395d4de606ddcfead94ef1d4df
 end
