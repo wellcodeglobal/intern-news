@@ -3,6 +3,15 @@
   margin-bottom: 30px;
 }
 
+.card-img {
+  width:35%;
+  height:75%
+}
+
 .img-home {
   margin-top: 30px;
+}
+
+.no-gutters {
+  height: 180px;
 }
