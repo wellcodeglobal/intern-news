@@ -1,42 +1,25 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="/">Intern News</a>
-    <a class="nav-item active" href="/category">Business</a>
-  </nav>
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light"  style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="/">
+    <img src="/image/logo.jpg" width="30" height="30" class="cardd-text"> Intern News - Article
+  </a>
+</nav>
 <div class="container">
+  <% @articles.each do |article| %>
   <div class="main">
   <div class="row">
-      <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src=https://www.youtube.com/embed/watch?v=FGMaD4By3yU&t=264s" allowfullscreen></iframe>
-  </div>
-        <h5 class="card-title">Kolaborasi Wellcode.io – Telkomsel, Telkom Indonesia, Blanja.com dan eBay</h5>
+      <img style="height: 55%; width: 70%; display: block;" src="/image/b.jpg" alt="Card image"><br>
           </div>
-      <p class="card-text"><small class="text-muted">by A.R WICAKSONO03 Aug 2019 06:44:45</small></p>
-    </div>
     <div class="col-md-8">
-      <h1>Jawab Megawati soal Menteri, Jokowi: Kalau PDIP Dapat 4, yang Lain 2, Kan Udah Banyak</h1>
+      <h1><%= article.title %></h1>
+        <p class="card-text"><small class="text-muted">by <%= article.admin %> <%= timestamps(:article, :created_on) %></small></p>
       <div class="text-justify">
-      <p>MetraPlasa – Jakarta Selatan, 1 Agustus 2019 Jemy Confido, (CEO), Mustapa Wangsaatmaja, (GM Executive R&D) Bilpen Nainggolan (SVP), dan Jajaran Eksekutif Blanja.com mengundang M. Fahrizal S. (CEO) dan Irfan Fauzan Rasyad (VP) Wellcode.io untuk melakukan inisiasi skema kerja sama dan integrasi platform teknologi bagi kemajuan usaha mikro kecil dan menengah (UMKM) yang telah diluncurkan dan terus dikembangkan oleh Wellcode.io bernama Pinterusaha.ai
-
-Blanja.com adalah Joint-venture antara Telkomsel, Telkom Indonesia, dan eBay. Blanja.com merupakan sebuah konsep online-marketplace yang saat ini telah memiliki sejumlah merchant yang menawarkan berbagai produk dari bermacam kategori. Saat ini Blanja.com telah bekerja sama dengan beberapa institusi perbankan di Indonesia, antara lain Bank Mandiri, BNI, BCA, BRI, Mega, Niaga, ANZ, BII, dan bank-bank lain nya di Indonesia. Kemitraan strategis tersebut di prediksi dapat membantu Blanja.com untuk menjadi pemimpin di industri e-commerce dunia dan meramaikan pasar online baik lokal maupun global dalam beberapa tahun ke depan.
-
-Melalui Blanja.com setiap user dapat mengakses beberapa produk lokal, khusus nya dari sektor UMKM. Blanja.com membuka gerbang lebar bagi pelaku usaha kecil yang baru membuka usaha agar lebih mudah untuk mengakses pasar. Selain itu melalui Blanja.com para user juga dapat memiliki akses kepada lebih dari 500 juta produk di dunia karena telah terintegrasi dengan platform eBay.</p>
-
-Menurut Jemy saat ini Blanja.com terus berupaya untuk meningkatkan jumlah pengguna dari sisi seller dan buyer, melalui program seller relationship yang terus berjalan. Dengan jumlah user yang memadai, produk yang ditampilkan oleh Blanja.com terdiri dari berbagai kategori antara lain fashion, kesehatan, kecantikan, olahraga, outdoor, smart device, perlengkapan rumah tangga, ibu, bayi, dan anak, makan dan minuman, otomotif, aksesori, tiket, voucher, dan produk-produk digital lain nya. Blanja.com fokus untuk meningkatkan traffic dan fokus melayani segmen user tertentu, yaitu segmen komunitas sehingga mereka mampu memenuhi kebutuhan dalam melakukan transaksi di Blanja.com
-
-Platform Blanja.com sangat menarik untuk digunakan oleh user dari sisi buyer dan seller, karena dapat mengklasifikasikan kategori produk dan memberikan fitur yang dapat mendukung kenyamanan berbelanja online bagi para user. Salah satu nya adalah menampilkan daftar produk hits dan terlaris, kemudian ada juga fitur best seller yang terdiri dari bermacam produk. Blanja.com juga memiliki fasilitas metode pembayaran yang cepat, aman, dan sangat praktis. Antara lain dengan menggunakan metode transfer bank, kartu kredit, internet banking, cash on delivery, atau digital payment.
-
-Dalam kesempatan tersebut, menurut M. Fahrizal S., wellcode.io saat ini juga sudah meluncurkan dan terus mengembangkan platform digital yang dapat mendukung UMKM untuk pengembangan bisnis nya, bernama Pinterusaha.ai. Produk ini dikembangkan dalam beberapa tahapan, saat ini menurut M. Fahrizal S., segenap team nya sedang berfokus untuk terus melakukan iterasi produk yang dapat melakukan otomasi proses administrasi dan manajemen bisnis dengan teknik data mining (artificial intelligence) untuk mendapatkan product market fit, dengan begitu para pelaku UMKM dapat lebih mudah untuk melakukan pengendalian bisnis nya. M. Fahrizal S. mengatakan bahwa Pinterusaha.ai dapat mendukung peranan Blanja.com dan eBay untuk meningkatkan penggunaan platform nya, karena teknologi nya dapat membantu para UMKM untuk mengendalikan usaha nya.</p>
-
-CEO & Jajaran Eksekutif Blanja.com sangat tertarik dengan segenap team dan konsep kerja sama yang ditawarkan oleh wellcode.io dalam memajukan UMKM di Indonesia. Di era digital saat ini, kami sangat berpikir positif dan harus banyak melakukan kolaborasi bukan melihat dari sudut pandang banyak dan kejam nya kompetisi, dan passion kami untuk membangun startup ini adalah untuk membantu UMKM Indonesia agar bisa bersaing di panggung dunia, pungkas M. Fahrizal S. Dalam beberapa minggu ke depan CEO & Jajaran Eksekutif Blanja.com kembali mengundang team wellcode.io untuk lebih serius menjajaki kerja sama penggunaan teknologi bagi UMKM Indonesia.
-
-Wellcode.io Team
-
-Leading high-tech Indonesia Startup Digital - which serves the community with revolutionary products, system development, and information technology infrastructure</p>
+      <p><%= article.body %></p>
       </div>
     </div>
   </div>
+  <% end %>
 </div>
-
 <div class="comment-btn">
 <button type="button" class="btn btn-outline-secondary mt-3 mx-5" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">KOMENTAR</button>
 </div>
@@ -53,7 +36,7 @@ Leading high-tech Indonesia Startup Digital - which serves the community with re
       <div class="modal-body">
           <%= form_tag("/komentar", action:"post") do %>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Nama :</label>
+                <label for="recipient-name" class="col-form-label">Name :</label>
                 <input type="text" name="name" class="form-control" id="name" placeholder="name">
               </div>
               <div class="form-group">
@@ -61,13 +44,13 @@ Leading high-tech Indonesia Startup Digital - which serves the community with re
                 <input type="email" name="email" class="form-control" id="email" placeholder="your@email.com">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Komentar :</label>
+                <label for="message-text" class="col-form-label">Comment :</label>
                 <textarea class="form-control" name="komentar" id="message-text"></textarea>
               </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Kirim</button>
+        <button type="submit" class="btn btn-primary">Send</button>
       </div>
       <% end %>
     </div>

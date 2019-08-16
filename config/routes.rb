@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   #user
   get '/', to: 'home#index'
+  get '/category/:id', to: 'category#show'
   get '/article/:id', to: 'article#show'
   post '/comment', to: 'comment#create'
-  get '/category/:id', to: 'category#show'
 
   #login
   #get '/login', to:'auth#index'

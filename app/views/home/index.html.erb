@@ -1,134 +1,62 @@
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="/">Intern News</a>
-  <a class="navbar-brand" href="/">Popular</a>
-  <a class="navbar-brand" href="/">Recommend</a>
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="/">
+    <img src="/image/logo.jpg" width="30" height="30" class="cardd-text">
+    Intern News
+    <a class="navbar-brand" href="/">Popular</a>
+    <a class="navbar-brand" href="/">Recommend</a>
+  </a>
 </nav>
 <div class="container" style="mx: 5;">
-  <div class="row card-home">
-    <div class="col">
-      <div class="card bg-light mb-3" " style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px"">
-        <img src="/image/fotoo.jpg" style="height: 175px;">
-        <div class="card-body">
-          <a href="/category/1" class="stretched-link">
-            <h5 class="card-title">Knowledge</h5>
-          </a>
+  <% @categories.each do |category| %>
+    <div class="row card-home">
+      <div class="col">
+        <div class="card bg-light mb-3" style="max-width: 540px; height: 250px;">
+          <img src="/image/otoo.jpg" style="height: 175px;">
+          <div class="card-body">
+            <a href="/category/:id" class="stretched-link">
+              <h5 class="card-title"><%= category.name_category %></h5>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="col">
-      <div class="card bg-light mb-3" " style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px"">
-        <img src="/image/satuu.jpg" style="height: 175px;">
-        <div class="card-body">
-          <a href="/category/1" class="stretched-link">
-            <h5 class="card-title">Business</h5>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card bg-light mb-3" " style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px"">
-        <img src="/image/i.jpg" style="height: 175px;">
-        <div class="card-body">
-          <a href="/category/1" class="stretched-link">
-            <h5 class="card-title">Technology</h5>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-8 img-home">
-      <img style="height: 55%; width: 70%; display: block;" src="/image/b.jpg" alt="Card image"><br>
-      <h5 class="card-title">
-        <a href="/article/1">Kolaborasi Wellcode.io – Telkomsel, Telkom Indonesia, Blanja.com dan eBay</a>
-      </h5>
-      <p class="card-text">
 
+  <div class="container">
+    <% @articles.each do |article| %>
+      <div class="row">
+        <div class="col-8 img-home">
+          <img style="height: 55%; width: 70%; display: block;" src="/image/b.jpg" alt="Card image"><br>
+          <h5 class="card-title">
+            <a href="/article/:id"><%= article.title %></a>
+          </h5>
+          <small class="text-muted">by A.R WICAKSONO03 Aug 2019 06:44:45.</small>
+        </div>
+      </div>
 
-           Wellcode.io Team<br>
-           Leading high-tech Indonesia Startup Digital - which serves the community with revolutionary products, system development, and information technology infrastructure</br>
-
-        <small class="text-muted">by A.R WICAKSONO03 Aug 2019 06:44:45.</small>
-      </p>
-    </div>
-    <div class="col-4">
-      <h5>POPULAR</h5>
-      <div class="card mb-3" style="max-width: 540px;"></div>
-      <div class="row no-gutters"></div>
-      <div class="col-md-4"></div>
-      <img src="/image/c.jpg" class="card-img" alt="/c.jpg">
-      <p class="card-text">
-        <a href="/article/2">Wellcode.io – MWC 19 Shanghai - China; Wellcode.io Dedikasi Pengembangan Teknologi untuk Indonesia</p>
-        <p class="card-text">
-          <small class="text-muted">by A.R WICAKSONO19 Jul 2019 15:10:24</small>
-        </p>
+      <div class="col-4">
+        <h5>POPULAR</h5>
+        <div class="card mb-3" style="max-width: 540px;"></div>
         <div class="row no-gutters"></div>
         <div class="col-md-4"></div>
-        <img src="/image/f.jpg" class="card-img" alt="/f.jpg">
-        <p class="card-text">
-          <a href="/article/3">Wellcode.io – Malaysia Digital Economy Corporation (MDEC); Belajar mendorong Ekonomi Digital dari Malaysia.</p>
+        <img src="/image/c.jpg" class="card-img" alt="/c.jpg">
+        <p class="card-text"><a href="/article/:id"><%= article.title %></p>
           <p class="card-text">
-            <small class="text-muted">by A.R WICAKSONO19 Jul 2019 14:31:23</small>
+            <small class="text-muted">by A.R WICAKSONO19 Jul 2019 15:10:24</small>
           </p>
         </div>
-        <div class="card-group">
-
-          <div class="card"style=" max-width: 255px; height: 450px">
-            <img src="/image/fotoooo.jpg" class="card-img-top" alt="/fotoooo.jpg" style="height: 275px;">
-
-
-          <div class="card" " style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px">
-            <img src="/image/h.jpg" class="card-img-top" alt="/h.jpg" style="height: 175px;">>
-
-          <div class="card" style=" max-width: 540px; height: 480px">
-            <img src="/image/h.jpg" class="card-img-top" alt="/h.jpg" style="height: 275px;">
-
-
-            <div class="card-body">
-              <p class="card-text">books is like a conversation with the finest minds of past centuries.</p>
-              <p <small class="text-muted">APRIL 14 2019</small>
-              </p>
-            </div>
-
-        </div>
-          <div class="card" style=" max-width: 255px; height: 450px">
-            <img src="/image/h.jpg" class="card-img-top" alt="/h.jpg" style="height: 275px;">
-
+      <div class="card-deck">
+        <div class="card">
+          <img src="/image/k.jpg" class="card-img-top" alt="/k.jpg">
+          <div class="card-body">
+            <p class="card-text"><%= article.title %></p>
+            <p class="card-text">
+              <small class="text-muted">by A.R WICAKSONO27 Mar 2019 14:14:15</small>
+            </p>
           </div>
-
-          <div class="card"" style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px">
-            <img src="/image/fotoooo.jpg" class="card-img-top" alt="/fotoooo.jpg" style="height: 175px;">>
-
-          <div class="card"style=" max-width: 540px; height: 480px">
-            <img src="/image/fotoooo.jpg" class="card-img-top" alt="/fotoooo.jpg" style="height: 275px;">
-
-
-            <div class="card-body">
-              <a href="/article/3">Muslimnesia; Mengintegrasikan Gaya Hidup Halal Kedalam Teknologi</p>
-              <p class="card-text">
-                <small class="text-muted">by A.R WICAKSONO15 Jul 2019 16:06:23</small>
-              </p>
-            </div>
-          </div>
-
-          <div class="card"style=" max-width: 255px; height: 450px">
-
-
-          <div class="card" " style=" max-width:="max-width:" 540px;="540px;" height:="height:" 250px"="250px">
-            <img src="/image/g.jpg" class="card-img-top" alt="/g.jpg" style="height: 175px;">>
-
-          <div class="card" style=" max-width: 540px; height: 480px">
-
-            <img src="/image/g.jpg" class="card-img-top" alt="/g.jpg" style="height: 275px;">
-
-            <div class="card-body">
-              <p class="card-text">TSM Indonesia; Potensi Industri Telematika dan Teknologi Pendukung Tahun 2020 Mendatang di Indonesia</p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
         </div>
+      </div>
+    <% end %>
+  </div>
