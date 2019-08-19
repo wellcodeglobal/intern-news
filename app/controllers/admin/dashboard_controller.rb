@@ -2,8 +2,8 @@ module Admin
 class DashboardController < ApplicationController
 
   def index
-    # @articles = article.all
-    # @categories = category.all
+    @articles = Article.all
+    @categories = Category.all
   end
 
 end
