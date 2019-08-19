@@ -1,2 +1,2 @@
-class Articles < ApplicationRecord
+class Article < ApplicationRecord
 end
