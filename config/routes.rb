@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #post '/login', to:'auth#create'
 
   #dashboard
-  get '/admin', to:'dashboard#index'
+  get '/admin/', to:'admin/dashboard#index'
 
   #article
   get '/admin/articles/new', to:'admin/articles#new'
