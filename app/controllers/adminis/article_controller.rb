@@ -1,14 +1,13 @@
-module Admin
+module Adminis
 class ArticlesController < ApplicationController
 
-  def index
-  end
-
   def new
-    @article = Article.new
   end
 
   def create
+  end
+
+  def index
   end
 
   def edit

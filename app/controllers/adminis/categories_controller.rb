@@ -1,4 +1,4 @@
-module Admin
+module Adminis
 class CategoriesController < ApplicationController
 
   def new

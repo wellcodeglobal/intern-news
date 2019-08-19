@@ -11,23 +11,24 @@ Rails.application.routes.draw do
   #get '/login', to:'auth#index'
   #post '/login', to:'auth#create'
 
-  #dashboard
-  get '/admin/', to:'admin/dashboard#index'
-
   #article
-  get '/admin/articles/new', to:'admin/articles#new'
-  post '/admin/articles', to:'admin/articles#create'
-  get '/admin/articles', to:'admin/articles#index'
-  get '/admin/articles/:id/edit', to:'admin/articles#edit'
-  put '/admin/articles/:id', to:'admin/articles#update'
-  delete '/admin/articles/:id', to:'admin/articles#destroy'
+  namespace :adminis do
+    #dashboard
+    get '/', to:'dashboard#index'
 
-  #category
-  get '/admin/categories/new', to:'admin/categories#new'
-  post '/admin/categories', to:'admin/categories#create'
-  get '/admin/categories', to:'admin/categories#index'
-  get '/admin/categories/:id/edit', to:'admin/categories#edit'
-  put '/admin/categories/:id', to:'admin/categories#update'
-  delete '/admin/categories/:id', to:'admin/categories#destroy'
+    get 'articles/new', to:'articles#new'
+    post 'articles', to:'articles#create'
+    get 'articles', to:'articles#index'
+    get 'articles/:id/edit', to:'articles#edit'
+    put 'articles/:id', to:'articles#update'
+    delete 'articles/:id', to:'articles#destroy'
 
+    #category
+    get 'categories/new', to:'categories#new'
+    post 'categories', to:'categories#create'
+    get 'categories', to:'categories#index'
+    get 'categories/:id/edit', to:'categories#edit'
+    put 'categories/:id', to:'categories#update'
+    delete 'categories/:id', to:'categories#destroy'
+  end
 end
