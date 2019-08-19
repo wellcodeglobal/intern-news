@@ -15,21 +15,15 @@ ActiveRecord::Schema.define(version: 2019_08_06_085945) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-  end
-
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "admins_id"
+    t.bigint "users_id"
     t.bigint "categories_id"
-    t.index ["admins_id"], name: "index_articles_on_admins_id"
     t.index ["categories_id"], name: "index_articles_on_categories_id"
+    t.index ["users_id"], name: "index_articles_on_users_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -46,7 +40,13 @@ ActiveRecord::Schema.define(version: 2019_08_06_085945) do
     t.index ["articles_id"], name: "index_comments_on_articles_id"
   end
 
-  add_foreign_key "articles", "admins", column: "admins_id"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+  end
+
   add_foreign_key "articles", "categories", column: "categories_id"
+  add_foreign_key "articles", "users", column: "users_id"
   add_foreign_key "comments", "articles", column: "articles_id"
 end

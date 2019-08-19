@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #get '/login', to:'auth#index'
   #post '/login', to:'auth#create'
 
-  namespace :adminis do
+  namespace :admin do
     #dashboard
     get '/', to:'dashboard#index'
 

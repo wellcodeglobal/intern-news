@@ -1,4 +1,4 @@
-module Adminis
+module Admin
 class ArticlesController < ApplicationController
 
   def new

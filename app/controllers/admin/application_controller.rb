@@ -1,4 +1,4 @@
-module Adminis
+module Admin
 class ApplicationController < ActionController::Base
   layout 'application'
 end

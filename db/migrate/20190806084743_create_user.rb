@@ -1,6 +1,6 @@
-class CreateAdmin < ActiveRecord::Migration[5.2]
+class CreateUser < ActiveRecord::Migration[5.2]
   def change
-    create_table :admins do |t|
+    create_table :users do |t|
       t.string :name
       t.string :email
       t.string :password
