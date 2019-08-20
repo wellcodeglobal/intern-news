@@ -2,14 +2,23 @@
     <a class="navbar-brand" href="#">
       <img src="/image/dash.jpg" width="100" height="100" > Wellcode Global
     </a>
-    <footer class="blockquote-footer">Hallo.....<cite title="Source Title">Admin</cite></footer>
     <nav class="navbar navbar-light bg-light">
-      <div class="text-center">Add Category</div>
+        <div class="text-center">Edit Category</div>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
       </form>
-    </nav>
+      <div class="dropdown">
+  <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Show
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">1</a>
+    <a class="dropdown-item" href="#">2</a>
+    <a class="dropdown-item" href="#">3</a>
+  </div>
+</div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,10 +26,10 @@
   <div class="row">
   <div class="col-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Dashboard</a>
-      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Article</a>
-      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Kategori</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+      <a class="nav-link" href="/admin/">DASHBOARD</a>
+      <a class="nav-link" href="/admin/articles">ARTICLE</a>
+      <a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">CATEGORY</a>
+      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">SETTINGS</a>
     </div>
   </div>
   <div class="col-9">
@@ -34,32 +43,32 @@
 </div>
 <div class="col-sm-3">
 <div class="card" style="width: 100rem; height: 50rem;">
-  <div class="card-body">
-    <div class="card" style="width: 90rem; height: 20rem">
-    <div class="card-body">
-      <label for="inputPassword5">Category Name</label>
-      <input type="text" class="form-control" id="inputCategory">
-  <small id="passwordHelpBlock" class="form-text text-muted">
-    Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
-  </small>
-  <form <button type="submit" class="btn btn-primary my-1">Submit</button>
-</form>
-    </div>
-  </div>
-  </div>
-  <div class="card-body">
-    <div class="card" style="width: 90rem; height: 20rem">
-    <div class="card-body">
-      <label for="inputPassword5">Hastag Name</label>
-  <input type="text" class="form-control" id="inputCategory">
-  <small id="passwordHelpBlock" class="form-text text-muted">
-    Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
-  </small>
-  <form <button type="submit" class="btn btn-primary my-1">Submit</button>
-</form>
-    </div>
-  </div>
-  </div>
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Category</th>
+      <th scope="col">Hastag</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Business</td>
+      <td>#SaveDollar</td>
+      <td><button type="button" class="btn btn-outline-success">Edit</button>
+     <button type="button" class="btn btn-outline-danger">Delete</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Technology</td>
+      <td>#SmartWatch</td>
+      <td><a href="/admin/categories/new" <button type="button" class="btn btn-outline-success">Edit</a></button>
+     <button type="button" class="btn btn-outline-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </nav>
 <nav aria-label="Page navigation example">
