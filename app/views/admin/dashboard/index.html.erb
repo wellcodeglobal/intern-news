@@ -1,60 +1,110 @@
-
-    <a class="navbar-brand" href="#">
-      <img src="/image/dash.jpg" width="100" height="100" > Wellcode Global
-    </a>
-    <footer class="blockquote-footer">Hallo.....<cite title="Source Title">Admin</cite></footer>
-    <nav class="navbar navbar-light bg-light">
-      <div class="text-center">Halaman Dashboard</div>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<!-- navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="/admin/" role="tab" aria-controls="v-pills-home" aria-selected="true">DASHBOARD</a>
-      <a class="nav-link" href="/admin/articles">ARTICLE</a>
-      <a class="nav-link" href="/admin/categories">KATEGORY</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">SETTINGS</a>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Article</h5>
-      <p class="card-text">a software engineering company, which serves the community with revolutionary products, system development, and information technology infrastructure in order to develop their creative ideas to be more economically valuable.</p>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Kategori</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <div class=" col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+          <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">
+            <img src="/image/dash.jpg" width="50" height="50" > Wellcode.io
+          </a>
+          <div class="bottom-border pb-3">
+            <a href="#" class="text-white">nama user</a>
+          </div>
+          <ul class="navbar-nav flex-column mt-4">
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current">DASHBOARD</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2">ARTICLE</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2">CATEGORY</a></li>
+            <li class="nav-item ml-md-auto"><a href="#" class="nav-link text-white p-3 mb-2">LOGOUT</a></li>
+          </ul>
+        </div>
+        <!-- akhir dari sidebar -->
+
+        <!-- topnav -->
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <h4 class="text-light text-uppercase mb-0">DASHBOARD</h4>
+            </div>
+            <div class="col-md-3">
+              <form>
+                <div class="input-group">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-3">
+              <ul class="navbar-nav">
+                <li class="nav-item ml-md-auto"><a href="#" class="nav-link"><i class="fas fa-sign-out-alt text-danger fa-lg"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- akhir topbar -->
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Hastag</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+</nav>
+<!-- akhir navbar -->
+
+<!-- cards -->
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+        <div class="row pt-md-5 mt-md-3 mb-5">
+          <div class="col-xl-3 col-sm-6 pt-2">
+            <div class="card card-common">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fas fa-chat fa-3x text-warning"></i>
+                  <div class="text-right text-secondary">
+                    <h3>Articles</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-secondary">
+                <span>4</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 p-2">
+            <div class="card card-common">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fa-3x text-warning"></i>
+                  <div class="text-right text-secondary">
+                    <h3>Categories</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-secondary">
+                <span>4</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 p-2">
+            <div class="card card-common">
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <i class="fas fa-comments fa-3x text-warning"></i>
+                  <div class="text-right text-secondary">
+                    <h3>Comments</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-secondary">
+                <span>4</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</nav>
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-
-      <a class="page-link" href="#">Add New</a>
-
-  </ul>
-</nav>
+</section>
+<!-- akhir cards -->

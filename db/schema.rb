@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_085945) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
     t.bigint "users_id"
     t.bigint "categories_id"
     t.index ["categories_id"], name: "index_articles_on_categories_id"

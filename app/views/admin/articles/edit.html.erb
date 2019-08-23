@@ -27,7 +27,7 @@
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
           <div class="row align-items-center">
             <div class="col-md-9 ">
-              <h4 class="text-light text-uppercase mb-0">FORM ARTICLES</h4>
+              <h4 class="text-light text-uppercase mb-0">EDIT ARTICLES</h4>
             </div>
             <div class="col-md-3">
               <form>
@@ -50,7 +50,7 @@
   <div class="container-fluid">
     <div class="row mt-5 mb-5">
       <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-        <%= form_for @article, url:{action:"create") do |f| %>
+        <%= form_tag("/admin/articles", action:"put") do %>
           <div class="form-group">
             <label for="exampleInputEmail1">Judul :</label>
             <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -61,8 +61,8 @@
             <label for="exampleFormControlFile1">Example file input</label>
             <input type="file" class="form-control-file" id="exampleFormControlFile1">
           </div>
-          <a class="btn btn-danger" href="/admin/articles/new" type="button">Batal</a>
-          <input class="btn btn-primary" type="submit">Kirim</input>
+          <a class="btn btn-danger" href="/admin/articles" type="button">Batal</a>
+          <input class="btn btn-primary" type="submit">Simpan Perubahan</input>
         <% end %>
       </div>
     </div>

@@ -9,10 +9,9 @@ class ArticlesController < ApplicationController
     Article.create(
       title: params[:title],
       body: params[:body],
-      created_on: params[:created_on],
     )
 
-    redirect_to "/admin/articles"
+    render  "/admin/articles/"
   end
 
   def index
@@ -20,11 +19,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @articles = Article.edit(
-      params[:id]
-    )
+    @article = Article.find(params[:id])
 
-    redirect_to "/admin/articles/new"
+    render "/admin/articles/edit"
   end
 
   def update
@@ -34,14 +31,14 @@ class ArticlesController < ApplicationController
       created_on: params[:created_on],
     )
 
-    redirect_to "/admin/articles"
+    redirect_to "/admin/articles/"
   end
 
   def destroy
-    session[:current_article_id] = nil
-    flash[:notice] = "You have successfully delete the file."
-
-    redirect_to "/admin/articles"
+    article = Article.find(params[:id])
+    article.destroy
+    flash[:note] = "Berhasil dihapus!"
+    redirect_to admin_articles_path
   end
 
 end

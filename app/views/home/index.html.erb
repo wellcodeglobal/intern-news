@@ -14,7 +14,7 @@
         <div class="card bg-light mb-3" style="max-width: 540px; height: 250px;">
           <img src="/image/otoo.jpg" style="height: 175px;">
           <div class="card-body">
-            <a href="/category/:id" class="stretched-link">
+            <a href="/category/:i" class="stretched-link">
               <h5 class="card-title"><%= category.name_category %></h5>
             </a>
           </div>
@@ -30,7 +30,7 @@
         <div class="col-8 img-home">
           <img style="height: 55%; width: 70%; display: block;" src="/image/b.jpg" alt="Card image"><br>
           <h5 class="card-title">
-            <a href="/article/:id"><%= article.title %></a>
+            <a href="/article/<%= article.id %>"> <%= article.title %></a>
           </h5>
           <small class="text-muted">by A.R WICAKSONO03 Aug 2019 06:44:45.</small>
         </div>

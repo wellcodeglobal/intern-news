@@ -1,71 +1,79 @@
-
-    <a class="navbar-brand" href="#">
-      <img src="/image/dash.jpg" width="100" height="100" > Wellcode Global
-    </a>
-    <footer class="blockquote-footer">Hallo.....<cite title="Source Title">Admin</cite></footer>
-    <nav class="navbar navbar-light bg-light">
-      <div class="text-center">Add Category</div>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<!-- navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+  <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link" href="/admin/">DASHBORD</a>
-      <a class="nav-link" href="/admin/articles">ARTICLE</a>
-      <a class="nav-link active" href="/admin/categories">CATEGORY</a>
-      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">SETTINGS</a>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <div class=" col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+          <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">
+            <img src="/image/dash.jpg" width="50" height="50" > Wellcode.io
+          </a>
+          <div class="bottom-border pb-3">
+            <a href="#" class="text-white">nama user</a>
+          </div>
+          <ul class="navbar-nav flex-column mt-4">
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2">DASHBOARD</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2">ARTICLE</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current">CATEGORY</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2">LOGOUT</a></li>
+          </ul>
+        </div>
+        <!-- akhir dari sidebar -->
+
+        <!-- topnav -->
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+          <div class="row align-items-center">
+            <div class="col-md-9 ">
+              <h4 class="text-light text-uppercase mb-0">FORM CATEGORY</h4>
+            </div>
+            <div class="col-md-3">
+              <form>
+                <div class="input-group">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- akhir topbar -->
+      </div>
     </div>
   </div>
-  <div class="col-9">
-    <div class="tab-content" id="v-pills-tabContent">
-      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-    </div>
-  </div>
-</div>
-<div class="col-sm-3">
-<div class="card" style="width: 100rem; height: 50rem;">
-  <div class="card-body">
-    <div class="card" style="width: 90rem; height: 20rem">
-    <div class="card-body">
-      <label for="inputPassword5">Category Name</label>
-      <input type="text" class="form-control" id="inputCategory">
-  <small id="passwordHelpBlock" class="form-text text-muted">
-    Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
-  </small>
-  <form<button type="submit" class="btn btn-primary my-1"><a href="/admin/categories"</a>Submit</button>
-</form>
-    </div>
-  </div>
-  </div>
-  <div class="card-body">
-    <div class="card" style="width: 90rem; height: 20rem">
-    <div class="card-body">
-      <label for="inputPassword5">Hastag Name</label>
-  <input type="text" class="form-control" id="inputCategory">
-  <small id="passwordHelpBlock" class="form-text text-muted">
-    Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
-  </small>
-  <form <button type="submit" class="btn btn-primary my-1">Submit</button>
-</form>
-    </div>
-  </div>
-  </div>
-</div>
 </nav>
+<!-- akhir navbar -->
+
+<section>
+  <div class="container-fluid">
+    <div class="row mt-5 mb-5">
+      <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+        <div class="card">
+          <%= form_tag("/admin/categories", action:"post") do %>
+            <div class="card-body">
+              <label for="inputPassword5">Category Name</label>
+              <input type="text" class="form-control" id="inputCategory">
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
+              </small>
+              <button type="submit" class="btn btn-primary my-1"><a href="/admin/categories" </a>KIRIM</button>
+            </div>
+          <% end %>
+                <label for="inputPassword5">Hastag Name</label>
+                <input type="text" class="form-control" id="inputCategory">
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Your tittle must be 8-20 characters long, contain letters and numbers, and not contain spaces, special characters, or emoji.
+                </small>
+                <button type="submit" class="btn btn-primary my-1">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-
-      <a class=" href="#">Intern News @2019</a>
-
-  </ul>
+<ul class="pagination justify-content-center">
+  <a class="Intern News" @2019</a>
+</ul>
 </nav>
