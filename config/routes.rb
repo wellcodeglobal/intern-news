@@ -19,16 +19,16 @@ Rails.application.routes.draw do
     get 'articles/new', to:'articles#new'
     post 'articles', to:'articles#create'
     get 'articles', to:'articles#index'
-    get 'articles/:id/edit', to:'articles#edit'
+    get 'articles/:id/edit', to:'articles#edit', as: :edit_article
     put 'articles/:id', to:'articles#update'
-    delete 'articles/:id', to:'articles#destroy'
+    delete 'articles/:id', to:'articles#destroy', as: :article
 
     #category
     get 'categories/new', to:'categories#new'
     post 'categories', to:'categories#create'
     get 'categories', to:'categories#index'
-    get 'categories/:id/edit', to:'categories#edit'
+    get 'categories/:id/edit', to:'categories#edit', as: :edit_category
     put 'categories/:id', to:'categories#update'
-    delete 'categories/:id', to:'categories#destroy'
+    delete 'categories/:id', to:'categories#destroy', as: :category
   end
 end

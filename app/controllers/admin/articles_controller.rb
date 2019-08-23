@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
       body: params[:body],
     )
 
-    render  "/admin/articles/"
+    redirect_to admin_articles_path
   end
 
   def index

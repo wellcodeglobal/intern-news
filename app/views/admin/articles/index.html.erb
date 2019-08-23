@@ -68,15 +68,15 @@
                     <td><%= article.title %></td>
                     <td><%= article.body %></td>
                     <td><!-- article.foto --></td>
-                    <td><%= (articles.status==0?"Headline":"Subheadline") %></td>
+                    <td><%= (article.status==0 ? "Headline":"Subheadline") %></td>
                     <td>
                       <button type="button" class="btn btn-outline-primary">Headline</button>
                       <button type="button" class="btn btn-outline-secondary">Subheadline</button>
                       <a class="btn btn-success" href="/admin/articles/<%= article.id %>/edit" role="button">
-                        <%= link_to "Edit", edit_admin_articles_path(article.id) %>
+                        <%= link_to "Edit", admin_edit_article_path(article.id) %>
                       </a>
                       <button type="button" class="btn btn-danger" href="/admin/articles/<%= article.id %>">
-                        <%= link_to "Delete",admin_articles_path(article.id),method: :delete ,:data => {:confirm => 'Yakin ingin menghapus?'} %>
+                        <%= link_to "Delete", admin_article_path(article.id),method: :delete ,:data => {:confirm => 'Yakin ingin menghapus?'} %>
                       </button>
                     </td>
                   </tr>

@@ -50,7 +50,7 @@
   <div class="container-fluid">
     <div class="row mt-5 mb-5">
       <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
-        <%= form_for @article, url:{action:"create") do |f| %>
+      <%= form_tag("/admin/articles", action:"post") do %>
           <div class="form-group">
             <label for="exampleInputEmail1">Judul :</label>
             <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">

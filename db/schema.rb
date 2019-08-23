@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_085945) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name_category"
+    t.string "name"
+    t.string "hashtag"
   end
 
   create_table "comments", force: :cascade do |t|

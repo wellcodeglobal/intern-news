@@ -27,7 +27,7 @@
         <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
           <div class="row align-items-center">
             <div class="col-md-9 ">
-              <h4 class="text-light text-uppercase mb-0">DATA ARTICLES</h4>
+              <h4 class="text-light text-uppercase mb-0">DATA CATEGORY</h4>
             </div>
             <div class="col-md-3">
               <form>
@@ -60,24 +60,37 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Business</td>
-            <td>#SaveDollar</td>
-            <td><button type="button" class="btn btn-outline-success">Edit</button>
-           <button type="button" class="btn btn-outline-danger">Delete</button></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Technology</td>
-            <td>#SmartWatch</td>
-            <td><a href="/admin/categories/new" <button type="button" class="btn btn-outline-success">Edit</a>
-           <button type="button" class="btn btn-outline-danger">Delete</button></td>
-          </tr>
+          <% @categories.each do |category| %>
+            <tr>
+              <th scope="row">1</th>
+              <td><%= category.name %></td>
+              <td><%= category.hashtag %></td>
+              <td>
+              <button type="button" class="btn btn-outline-success">Edit</button>
+             <button type="button" class="btn btn-outline-danger">Delete</button></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Technology</td>
+              <td>#SmartWatch</td>
+              <td>
+                <a class="btn btn-success" href="/admin/categories/<%= category.id %>/edit" role="button">
+                  <%= link_to "Edit", admin_edit_category_path(category.id) %>
+                </a>
+                <button type="button" class="btn btn-danger" href="/admin/categories/<%= category.id %>">
+                  <%= link_to "Delete", admin_category_path(category.id),method: :delete ,:data => {:confirm => 'Yakin ingin menghapus?'} %>
+                </button>
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
   </div>
+  </div>
+</section>
+
+<!-- footer -->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
 
