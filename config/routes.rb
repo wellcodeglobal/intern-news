@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get 'auth/login'
+  post 'auth/login_auth'
+  get 'auth/signup'
+  post 'auth/create'
+  get 'auth/dashboard'
+  root 'auth#signup'
   #user
   get '/', to: 'home#index'
   get '/category/:id', to: 'category#show'
