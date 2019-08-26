@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   post '/comment', to: 'comment#create'
 
   #login
-  #get '/login', to:'auth#index'
-  #post '/login', to:'auth#create'
+  get '/login', to:'auth#index'
+  post '/login', to:'auth#create'
 
   namespace :admin do
     #dashboard
