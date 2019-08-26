@@ -1,5 +1,6 @@
 module Admin
 class CategoriesController < ApplicationController
+  before_action :require_login
 
   def new
     @categories = Category.new

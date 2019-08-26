@@ -12,13 +12,13 @@
   </head>
   <body>
 
-    <div class="container">
-      <h4 class="text-center">FORM LOGIN</h4>
+  <div class="container">
+    <h4 class="text-center">FORM LOGIN</h4>
       <hr>
 
-      <form>
+      <%= form_tag("admin/auth/login_auth", method: "post") do %>
         <div class="form-group">
-          <label>Usernsme</label>
+          <label>Username</label>
           <input type="text" name="" class="form-control" placeholder="Input email or username">
         </div>
 
@@ -27,10 +27,11 @@
           <input type="password" name="" class="form-control" placeholder="Input Password">
         </div>
 
-        <button type="submit" class="btn-primary">Submit</button>
-        <button type"reset" class="btn btn-danger">Reset</button>
-      </form>
-    </div>
+        <button type="submit" class="btn-primary">Login</button>
+        <button type="reset" class="btn btn-danger">Batal</button>
+        <% end %>
+
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

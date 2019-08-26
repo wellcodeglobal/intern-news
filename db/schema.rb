@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_085945) do
+ActiveRecord::Schema.define(version: 2019_08_26_110458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 2019_08_06_085945) do
     t.string "name"
     t.string "username"
     t.string "password"
+    t.string "email"
+    t.string "encrypted_password", limit: 128
+    t.string "confirmation_token", limit: 128
+    t.string "remember_token", limit: 128
+    t.index ["email"], name: "index_users_on_email"
+    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   add_foreign_key "articles", "categories", column: "categories_id"

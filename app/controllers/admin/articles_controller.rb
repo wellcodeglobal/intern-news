@@ -1,5 +1,6 @@
 module Admin
 class ArticlesController < ApplicationController
+  before_action :require_login
 
   def new
     @article = Article.new
