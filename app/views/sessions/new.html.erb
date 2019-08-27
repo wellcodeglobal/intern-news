@@ -16,15 +16,15 @@
     <h4 class="text-center">FORM LOGIN</h4>
       <hr>
 
-      <%= form_tag("admin/auth/login_auth", method: "post") do %>
+      <%= form_tag("/session", method: "post") do %>
         <div class="form-group">
-          <label>Username</label>
-          <input type="text" name="" class="form-control" placeholder="Input email or username">
+          <label for="session_email">Email</label>
+          <input type="email" name="session[email]" class="form-control" id="session_email" placeholder="Input email">
         </div>
 
         <div class="form-group">
-          <label>Password</label>
-          <input type="password" name="" class="form-control" placeholder="Input Password">
+          <label for="session_password">Password</label>
+          <input type="password" name="session[password]" class="form-control" id="session_password" placeholder="Input Password">
         </div>
 
         <button type="submit" class="btn-primary">Login</button>

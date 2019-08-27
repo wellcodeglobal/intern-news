@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  resource :session, controller: 'sessions', only:  %i[create]
-   get '/session', to: redirect('/')
+  #resource :session, controller: 'sessions', only:  %i[create]
+   #get '/session', to: redirect('/')
 
-   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
-   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
-   get "/sign_up" => "clearance/users#new", as: "sign_up"
+   #get "/sign_in" => "clearance/sessions#new", as: "sign_in"
+   #delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+   #get "/sign_up" => "clearance/users#new", as: "sign_up"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resource :session, controller: 'sessions', only:  %i[create]
+  get '/session', to: redirect('/')
+
+  #get    '/login',   to: 'sessions#new', as: :admin_login
+  #post   '/login',   to: 'sessions#create'
+  #delete '/logout',  to: 'sessions#destroy'
 
 
   #user
@@ -19,15 +26,16 @@ Rails.application.routes.draw do
   #post '/login', to:'auth#create'
 
   namespace :admin do
-    get 'auth/login'
-    post 'auth/login_auth'
+
+    #get 'auth/login'
+    #post 'auth/login_auth'
     get 'auth/signup'
     post 'auth/create'
-    get 'auth/dashboard'
-    root 'auth#signup'
+    #get 'auth/dashboard'
+    #root 'auth#signup'
 
     #dashboard
-    #get '/', to:'dashboard#index'
+    get '/', to:'dashboard#index'
 
     #article
     get 'articles/new', to:'articles#new'
