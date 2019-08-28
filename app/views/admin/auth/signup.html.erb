@@ -16,7 +16,7 @@
 
           <h4 class="text-center">FORM SIGNUP</h4>
 
-          <%= form_tag("auth/create", method:"post") do %>
+          <%= form_tag("/admin/auth/create", method:"post") do %>
 
             <div class="form-group">
               <label>Nama</label>
@@ -33,7 +33,7 @@
               <input type="password" name="password" class="form-control" placeholder="6 to 12 characters">
             </div>
 
-            <button type="submit" class="btn-primary">Sign Up</button>
+            <button type="submit" class="btn-primary"><a href="/session/new">Create My Account!</a></button>
 
           <% end %>
     </div>

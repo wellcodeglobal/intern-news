@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   #resource :session, controller: 'sessions', only:  %i[create]
    #get '/session', to: redirect('/')
 
-   #get "/sign_in" => "clearance/sessions#new", as: "sign_in"
-   #delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
-   #get "/sign_up" => "clearance/users#new", as: "sign_up"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resource :session, controller: 'sessions', only:  %i[create]
-  get '/session', to: redirect('/')
+  # get '/session', to: redirect('/')
+  get "/sign_in", to: "sessions#new", as: :sign_in
+  delete "/sign_out",  to: "sessions#destroy", as: "sign_out"
+  #get "/sign_up" => "clearance/users#new"
 
   #get    '/login',   to: 'sessions#new', as: :admin_login
   #post   '/login',   to: 'sessions#create'
@@ -32,10 +32,9 @@ Rails.application.routes.draw do
     get 'auth/signup'
     post 'auth/create'
     #get 'auth/dashboard'
-    #root 'auth#signup'
 
     #dashboard
-    get '/', to:'dashboard#index'
+    root 'dashboard#index'
 
     #article
     get 'articles/new', to:'articles#new'

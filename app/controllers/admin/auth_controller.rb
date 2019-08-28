@@ -22,9 +22,9 @@ module Admin
 
       if user
         flash[:success] = 'Berhasil!'
-        redirect_to login
+        redirect_to sign_in_path
       else
-        flash[:danger] = 'Gagal Sign Up.'
+        flash[:danger] = 'Gagal Sign Up!'
         redirect_to admin_auth_signup
       end
     end
